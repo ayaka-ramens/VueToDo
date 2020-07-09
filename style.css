@@ -1,0 +1,10 @@
+#app ul {
+  list-style: none
+}
+[v-cloak] {
+  display: none;
+}
+
+#app li > span.done {
+  text-decoration: line-through;
+}

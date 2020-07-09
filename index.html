@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VueToDo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <h2>VueToDo</h2>
+    <form @submit.prevent>
+      <input type="text" v-model="newTask">
+      <button @click="addTask">
+        ToDo追加
+      </button>
+      <ul>
+        <li v-for="(task, index) in tasks">
+          <input type="checkbox" v-model="task.isDone">
+          <span :class="{ done: task.isDone }">{{ task.item }}</span>
+          <button @click="deleteTask(index)">削除</button>
+        </li>
+      </ul>
+    </form>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
