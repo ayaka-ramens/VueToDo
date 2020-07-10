@@ -1,4 +1,4 @@
 # VueToDo
 Vue.js学習のためのToDoアプリ
 
-![gif](https://user-images.githubusercontent.com/52645663/87106247-f5ecab80-c297-11ea-9181-8108bfaef270.gif)
+![vuetodo](https://user-images.githubusercontent.com/52645663/87139464-ffe3ce00-c2da-11ea-99fd-7c51ace637ca.gif)
