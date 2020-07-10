@@ -15,17 +15,17 @@
         add
       </button>
       <ul>
-        <li v-for="(task, index) in tasks">
-          <label :for="'complete-checkbox' + index">
+        <li v-for="(task, index) in tasks" class="checkbox-input">
           <input type="checkbox" :id="'complete-checkbox' + index" v-model="task.isDone" @change="taskComplete">
-          <span :class="{ done: task.isDone }">{{ task.item }}</span>
+          <label :for="'complete-checkbox' + index">
+            <span :class="{ done: task.isDone }">{{ task.item }}</span>
           </label>
           <button class="delete-button" @click="deleteTask(index)">Delete</button>
         </li>
       </ul>
     </form>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
   <script src="app.js"></script>
 </body>
 </html>

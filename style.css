@@ -26,6 +26,51 @@ body {
   cursor: pointer;
 }
 
+input[type=checkbox] {
+  display: none;
+}
+
+.checkbox-input input[type="checkbox"] + label {
+  display: none;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  padding-left: 25px;
+  padding-right: 10px;
+}
+
+.checkbox-input input[type="checkbox"] + label::before {
+  content: "";
+  position: absolute;
+  display: block;
+  box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;
+  left: 0;
+  top: 50%;
+  border: 1px solid;
+  border-color:  #344c5c;
+  border-radius: 10%;
+}
+
+.checkbox-input input[type="checkbox"]:checked + label::after{
+  content: "";
+  position: absolute;
+  display: block;
+  box-sizing: border-box;
+  width: 18px;
+  height: 9px;
+  margin-top: -9px;
+  top: 50%;
+  left: 3px;
+  transform: rotate(-45deg);
+  border-bottom: 3px solid;
+  border-left: 3px solid;
+  border-color:  #344c5c;
+  border-radius: 10%;
+}
+
 .delete-button {
   font-size: 15px;
   display: inline-block;
@@ -45,11 +90,11 @@ ul {
   display: none;
 }
 
+.done {
+  text-decoration: line-through;
+}
+
 li {
   font-size: 20px;
   padding: 5px 10px;
-}
-
-li > span.done {
-  text-decoration: line-through;
 }
