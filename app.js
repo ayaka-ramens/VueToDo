@@ -27,6 +27,10 @@ const app = new Vue({
     },
     deleteTask(index) {
       this.tasks.splice(index, 1)
+      this.saveTasks()
+    },
+    taskComplete() {
+      this.saveTasks()
     },
     saveTasks() {
       const parsed = JSON.stringify(this.tasks)

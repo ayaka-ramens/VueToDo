@@ -8,17 +8,19 @@
 </head>
 <body>
   <div id="app">
-    <h2>VueToDo</h2>
+    <h1 class="logo">VueToDo</h2>
     <form @submit.prevent>
-      <input type="text" v-model="newTask">
-      <button @click="addTask">
-        ToDo追加
+      <input type="text" class="input-text" v-model="newTask">
+      <button class="add-button" @click="addTask">
+        add
       </button>
       <ul>
         <li v-for="(task, index) in tasks">
-          <input type="checkbox" v-model="task.isDone">
+          <label :for="'complete-checkbox' + index">
+          <input type="checkbox" :id="'complete-checkbox' + index" v-model="task.isDone" @change="taskComplete">
           <span :class="{ done: task.isDone }">{{ task.item }}</span>
-          <button @click="deleteTask(index)">削除</button>
+          </label>
+          <button class="delete-button" @click="deleteTask(index)">Delete</button>
         </li>
       </ul>
     </form>
